@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMINA LENS | Professional Photography</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1a1a1a',
+                            gold: '#D4AF37',
+                            'gold-hover': '#b5952f',
+                            gray: '#f4f4f4'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Lora', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 antialiased bg-white selection:bg-brand-gold selection:text-white">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent text-white py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl font-bold tracking-widest uppercase">
+                Lumina<span class="text-brand-gold">.</span>
+            </a>
+
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                <a href="#home" class="hover:text-brand-gold transition-colors">Home</a>
+                <a href="#about" class="hover:text-brand-gold transition-colors">About</a>
+                <a href="#services" class="hover:text-brand-gold transition-colors">Services</a>
+                <a href="#portfolio" class="hover:text-brand-gold transition-colors">Portfolio</a>
+                <a href="#pricing" class="hover:text-brand-gold transition-colors">Pricing</a>
+                <a href="#contact" class="hover:text-brand-gold transition-colors">Contact</a>
+            </div>
+
+            <a href="#booking"
+                class="hidden md:inline-block border border-white px-6 py-2 text-sm hover:bg-white hover:text-black transition-all duration-300">
+                Book Now
+            </a>
+
+            <button id="menu-btn" class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-brand-dark text-white shadow-lg md:hidden">
+            <div class="flex flex-col items-center py-6 space-y-4">
+                <a href="#home" class="mobile-link hover:text-brand-gold">Home</a>
+                <a href="#about" class="mobile-link hover:text-brand-gold">About</a>
+                <a href="#services" class="mobile-link hover:text-brand-gold">Services</a>
+                <a href="#portfolio" class="mobile-link hover:text-brand-gold">Portfolio</a>
+                <a href="#pricing" class="mobile-link hover:text-brand-gold">Pricing</a>
+                <a href="#booking" class="mobile-link text-brand-gold font-bold">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative h-screen flex items-center justify-center text-center px-4">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                alt="Photographer Landscape" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-overlay bg-black/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-white fade-in-section">
+            <p class="text-brand-gold uppercase tracking-[0.3em] text-sm mb-4 font-bold">Professional Photography</p>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Capturing Moments, <br> Creating <span class="italic text-brand-gold">Memories</span>
+            </h1>
+            <p class="text-gray-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
+                Spesialis dalam pernikahan, potret, dan editorial dengan sentuhan estetik yang abadi dan bercerita.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#booking"
+                    class="bg-brand-gold hover:bg-brand-gold-hover text-white px-8 py-3 font-medium transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                    Book a Session
+                </a>
+                <a href="#portfolio"
+                    class="border border-white hover:bg-white hover:text-black text-white px-8 py-3 font-medium transition-all duration-300">
+                    View Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                <div class="w-full md:w-1/2 fade-in-section">
+                    <div class="relative">
+                        <div
+                            class="absolute -top-4 -left-4 w-full h-full border-2 border-brand-gold z-0 hidden md:block">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1635349090262-431052479144?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Photographer Portrait"
+                            class="relative z-10 w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500 shadow-xl">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 fade-in-section delay-100">
+                    <h4 class="text-brand-gold font-bold tracking-widest uppercase text-sm mb-2">About The Photographer
+                    </h4>
+                    <h2 class="font-serif text-4xl font-bold mb-6 text-brand-dark">The Person Behind The Lens</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Halo, saya Alex. Saya percaya bahwa fotografi bukan hanya tentang menekan tombol shutter, tetapi
+                        tentang menangkap emosi yang jujur dan momen yang fleeting. Dengan pengalaman lebih dari 7
+                        tahun, saya mengembangkan gaya visual yang menggabungkan estetika editorial modern dengan
+                        kehangatan dokumenter.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Setiap sesi pemotretan adalah kolaborasi unik. Baik itu pernikahan intim, potret editorial, atau
+                        dokumentasi brand, saya berdedikasi untuk menghasilkan karya visual yang berbicara.
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 text-center border-t border-gray-200 pt-6">
+                        <div>
+                            <span class="block font-serif text-3xl font-bold text-brand-dark">200+</span>
+                            <span class="text-xs text-gray-500 uppercase tracking-wider">Weddings</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-3xl font-bold text-brand-dark">500+</span>
+                            <span class="text-xs text-gray-500 uppercase tracking-wider">Happy Clients</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-3xl font-bold text-brand-dark">7+</span>
+                            <span class="text-xs text-gray-500 uppercase tracking-wider">Years Exp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-brand-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in-section">
+                <h4 class="text-brand-gold font-bold tracking-widest uppercase text-sm mb-2">My Expertise</h4>
+                <h2 class="font-serif text-4xl font-bold text-brand-dark">Services Provided</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-300 group fade-in-section">
+                    <div class="text-brand-gold text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-semibold mb-4 text-brand-dark">Wedding & Prewedding</h3>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Menangkap kisah cinta Anda dengan gaya
+                        sinematik dan timeless. Termasuk full-day coverage dan album premium.</p>
+                </div>
+
+                <div
+                    class="bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-300 group fade-in-section delay-100">
+                    <div class="text-brand-gold text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-semibold mb-4 text-brand-dark">Portrait & Editorial</h3>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Sesi foto untuk personal branding, model, atau
+                        kebutuhan korporat dengan pencahayaan studio atau natural.</p>
+                </div>
+
+                <div
+                    class="bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-300 group fade-in-section delay-200">
+                    <div class="text-brand-gold text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-semibold mb-4 text-brand-dark">Product & Commercial</h3>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Visual berkualitas tinggi untuk meningkatkan
+                        brand image produk Anda, cocok untuk katalog, web, dan media sosial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-12 fade-in-section">
+                <div>
+                    <h4 class="text-brand-gold font-bold tracking-widest uppercase text-sm mb-2">Latest Works</h4>
+                    <h2 class="font-serif text-4xl font-bold text-brand-dark">Selected Portfolio</h2>
+                </div>
+                <a href="#"
+                    class="hidden md:block text-brand-dark hover:text-brand-gold transition-colors font-medium border-b border-black hover:border-brand-gold pb-1">See
+                    All Works <i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden h-80 fade-in-section">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Wedding"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-serif text-xl">The Wedding</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden h-80 fade-in-section delay-100">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Portrait"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-serif text-xl">Portrait Session</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden h-80 fade-in-section delay-200">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Product"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-serif text-xl">Product Watch</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden h-80 fade-in-section">
+                    <img src="https://images.unsplash.com/photo-1501901609772-df0848060b33?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Couple"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-serif text-xl">Love Stories</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden h-80 fade-in-section delay-100">
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Fashion"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-serif text-xl">Editorial</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden h-80 fade-in-section delay-200">
+                    <img src="https://images.unsplash.com/photo-1551103782-8ab07afd45c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Event"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-serif text-xl">Events</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center md:hidden">
+                <a href="#" class="text-brand-dark hover:text-brand-gold font-medium border-b border-black pb-1">See All
+                    Works</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-brand-dark text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 fade-in-section">
+                <i class="fas fa-quote-left text-brand-gold text-4xl mb-4"></i>
+                <h2 class="font-serif text-3xl md:text-4xl">Words From Clients</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-[#222] p-8 rounded border border-gray-800 fade-in-section">
+                    <p class="text-gray-300 italic mb-6">"Hasil fotonya luar biasa! Alex sangat pandai mengarahkan gaya
+                        sehingga kami tidak merasa canggung. Momen pernikahan kami terabadikan dengan sangat estetik."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="font-semibold">Sarah & Dimas</div>
+                        <div class="ml-auto text-brand-gold">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#222] p-8 rounded border border-gray-800 fade-in-section delay-100">
+                    <p class="text-gray-300 italic mb-6">"Profesionalisme tingkat tinggi. Saya menggunakan jasa Lumina
+                        untuk foto produk brand saya, dan penjualannya meningkat karena visual yang premium."</p>
+                    <div class="flex items-center">
+                        <div class="font-semibold">Budi Santoso, CEO</div>
+                        <div class="ml-auto text-brand-gold">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 bg-brand-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in-section">
+                <h4 class="text-brand-gold font-bold tracking-widest uppercase text-sm mb-2">Packages</h4>
+                <h2 class="font-serif text-4xl font-bold text-brand-dark">Investment</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div
+                    class="bg-white p-10 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 fade-in-section">
+                    <h3 class="text-xl font-bold mb-2">Basic Portrait</h3>
+                    <p class="text-gray-500 text-sm mb-6">Untuk profil individu & pasangan</p>
+                    <div class="text-3xl font-serif font-bold text-brand-dark mb-6">Rp 1.500k</div>
+                    <ul class="space-y-4 text-gray-600 text-sm mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3"></i> 1 Jam Sesi</li>
+                        <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3"></i> 1 Lokasi</li>
+                        <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3"></i> 20 Foto Edit
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3"></i> Online Gallery
+                        </li>
+                    </ul>
+                    <a href="#booking"
+                        class="block text-center border border-black py-3 hover:bg-black hover:text-white transition-colors uppercase text-xs font-bold tracking-widest">Choose
+                        Plan</a>
+                </div>
+
+                <div
+                    class="bg-white p-10 shadow-xl border-t-4 border-brand-gold transform md:-translate-y-4 fade-in-section delay-100">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="text-xl font-bold">Wedding Day</h3>
+                        <span class="bg-brand-gold text-white text-xs px-2 py-1 uppercase font-bold">Popular</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-6">Momen sakral terabadikan sempurna</p>
+                    <div class="text-3xl font-serif font-bold text-brand-dark mb-6">Rp 8.000k</div>
+                    <ul class="space-y-4 text-gray-600 text-sm mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3"></i> 6 Jam Coverage
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3"></i> 2 Fotografer
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3"></i> 100+ Foto Edit
+                        </li>
+                        <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3"></i> Mini Album 20
+                            Halaman</li>
+                        <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3"></i> Flashdisk Box
+                        </li>
+                    </ul>
+                    <a href="#booking"
+                        class="block text-center bg-brand-gold text-white py-3 hover:bg-brand-gold-hover transition-colors uppercase text-xs font-bold tracking-widest shadow-md">Choose
+                        Plan</a>
+                </div>
+
+                <div
+                    class="bg-white p-10 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 fade-in-section delay-200">
+                    <h3 class="text-xl font-bold mb-2">Full Branding</h3>
+                    <p class="text-gray-500 text-sm mb-6">Solusi visual untuk bisnis</p>
+                    <div class="text-3xl font-serif font-bold text-brand-dark mb-6">Rp 4.500k</div>
+                    <ul class="space-y-4 text-gray-600 text-sm mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3"></i> 4 Jam Sesi
+                            Studio/Onsite</li>
+                        <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3"></i> Product & Team
+                            Headshot</li>
+                        <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3"></i> 50 Foto Retouch
+                            High-Res</li>
+                        <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3"></i> Commercial
+                            Rights</li>
+                    </ul>
+                    <a href="#booking"
+                        class="block text-center border border-black py-3 hover:bg-black hover:text-white transition-colors uppercase text-xs font-bold tracking-widest">Choose
+                        Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12 max-w-6xl mx-auto items-center">
+                <div class="w-full md:w-1/2 fade-in-section">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Camera" class="w-full h-auto object-cover shadow-2xl">
+                </div>
+                <div class="w-full md:w-1/2 fade-in-section delay-100">
+                    <h4 class="text-brand-gold font-bold tracking-widest uppercase text-sm mb-2">Get In Touch</h4>
+                    <h2 class="font-serif text-4xl font-bold text-brand-dark mb-6">Book Your Date</h2>
+                    <form action="#" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 mb-2">Name</label>
+                                <input type="text"
+                                    class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors bg-transparent"
+                                    placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 mb-2">Email</label>
+                                <input type="email"
+                                    class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors bg-transparent"
+                                    placeholder="email@address.com">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 mb-2">Service
+                                    Type</label>
+                                <select
+                                    class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors bg-transparent text-gray-700">
+                                    <option>Wedding</option>
+                                    <option>Prewedding</option>
+                                    <option>Portrait</option>
+                                    <option>Product/Commercial</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 mb-2">Date</label>
+                                <input type="date"
+                                    class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors bg-transparent text-gray-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gray-500 mb-2">Message</label>
+                            <textarea rows="4"
+                                class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors bg-transparent"
+                                placeholder="Tell me about your event..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-brand-dark text-white px-10 py-4 font-bold uppercase tracking-widest hover:bg-brand-gold transition-colors duration-300 w-full md:w-auto">
+                            Send Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-brand-dark text-white pt-20 pb-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 border-b border-gray-800 pb-12">
+                <div class="md:col-span-1">
+                    <a href="#" class="font-serif text-2xl font-bold tracking-widest uppercase block mb-6">
+                        Lumina<span class="text-brand-gold">.</span>
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Menangkap keindahan dalam setiap momen. Berbasis di Jakarta, tersedia untuk perjalanan ke
+                        seluruh dunia.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-serif text-lg font-bold mb-6">Studio</h3>
+                    <p class="text-gray-400 text-sm mb-2">Jl. Kemang Raya No. 123</p>
+                    <p class="text-gray-400 text-sm mb-2">Jakarta Selatan, Indonesia</p>
+                    <p class="text-gray-400 text-sm mt-4">Mon - Fri: 10am - 7pm</p>
+                </div>
+                <div>
+                    <h3 class="font-serif text-lg font-bold mb-6">Contact</h3>
+                    <p class="text-gray-400 text-sm mb-2"><i class="fas fa-envelope mr-2 text-brand-gold"></i>
+                        hello@luminalens.com</p>
+                    <p class="text-gray-400 text-sm mb-2"><i class="fab fa-whatsapp mr-2 text-brand-gold"></i> +62 812
+                        3456 7890</p>
+                </div>
+                <div>
+                    <h3 class="font-serif text-lg font-bold mb-6">Social</h3>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold hover:text-white transition-colors"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold hover:text-white transition-colors"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-gold hover:text-white transition-colors"><i
+                                class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2023 Lumina Lens Photography. Designed by Webvlora.</p>
+                <div class="space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-brand-dark/95', 'backdrop-blur-md', 'shadow-md', 'py-2');
+                navbar.classList.remove('bg-transparent', 'py-4');
+            } else {
+                navbar.classList.add('bg-transparent', 'py-4');
+                navbar.classList.remove('bg-brand-dark/95', 'backdrop-blur-md', 'shadow-md', 'py-2');
+            }
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
